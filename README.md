@@ -1,52 +1,43 @@
 hbs-moment
 ==========
 
-Add moment helper to hbs
+UNDER DEVELOPING!
 
+Set [moment](https://github.com/moment/moment) as a [hbs](https://github.com/donpark/hbs) helper.
 
-  {{moment 'now' format='MMMM Do YYYY, h:mm:ss a'}} <br/>
-  {{moment 'now' format='dddd'}} <br/>
-  {{moment 'now' format='MMM Do YY'}} <br/>
-  {{moment 'now' format='YYYY [escape] YYYY'}} <br/>
-  {{moment 'now' format=''}}
+## Usage
 
-    <br /> <br/>
+`'now' = new Date()`
 
-  {{moment '20111031 YYYYMMDD' fromNow=''}} <br/>
-  {{moment '20120620 YYYYMMDD' fromNow=''}} <br/>
-  {{moment 'now' fromNow = 'start day'}} <br/>
-  {{moment 'now' fromNow = 'end day'}} <br/>
-  {{moment 'now' fromNow = 'start hour'}} <br/>
+### Format Dates
 
-  <br/><br/>
+```js
+{{moment 'now' format='MMMM Do YYYY, h:mm:ss a'}} // July 12th 2014, 3:34:43 pm
+{{moment 'now' format='dddd'}} // Saturday
+{{moment 'now' format='MMM Do YY'}} // Jul 12th 14
+{{moment 'now' format='YYYY [escape] YYYY'}} // 2014 escape 2014
+{{moment 'now' format=''}} //2014-07-12T15:34:43+08:00
+```
 
-  {{moment 'now' calendar = 'subtract days 10'}} <br/>
-  {{moment 'now' calendar = 'subtract days 6'}} <br/>
-  {{moment 'now' calendar = 'subtract days 3'}} <br/>
-  {{moment 'now' calendar = 'subtract days 1'}} <br/>
-  {{moment 'now' calendar = ''}} <br/>
-  {{moment 'now' calendar = 'add days 1'}} <br/>
-  {{moment 'now' calendar = 'add days 3'}} <br/>
-  {{moment 'now' calendar = 'add days 10' lang='zh-cn'}} <br/>
-  
-  July 12th 2014, 3:34:43 pm
-Saturday
-Jul 12th 14
-2014 escape 2014
-2014-07-12T15:34:43+08:00
+### Relative Time
 
-3 years ago
-2 years ago
-16 hours ago
-in 8 hours
-35 minutes ago
+```js
+{{moment '20111031 YYYYMMDD' fromNow=''}} // 3 years ago
+{{moment '20120620 YYYYMMDD' fromNow=''}} // 2 years ago
+{{moment 'now' fromNow = 'start day'}} // 16 hours ago
+{{moment 'now' fromNow = 'end day'}} // in 8 hours
+{{moment 'now' fromNow = 'start hour'}} // 35 minutes ago
+```
 
+### Calendar Time
 
-07/22/2014
-Friday at 3:34 PM
-Tuesday at 3:34 PM
-Tomorrow at 3:34 PM
-Today at 3:34 PM
-Tomorrow at 3:34 PM
-Tuesday at 3:34 PM
-2014年7月22日
+```javascript
+{{moment 'now' calendar = 'subtract days 10'}} // 07/22/2014
+{{moment 'now' calendar = 'subtract days 6'}} // Friday at 3:34 PM
+{{moment 'now' calendar = 'subtract days 3'}} // Tuesday at 3:34 PM
+{{moment 'now' calendar = 'subtract days 1'}} // Tomorrow at 3:34 PM
+{{moment 'now' calendar = ''}} // Today at 3:34 PM
+{{moment 'now' calendar = 'add days 1'}} // Tomorrow at 3:34 PM
+{{moment 'now' calendar = 'add days 3'}} // Tuesday at 3:34 PM
+{{moment 'now' calendar = 'add days 10' lang='zh-cn'}} // 2014年7月22日
+```
